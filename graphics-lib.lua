@@ -1,7 +1,7 @@
--- by carrot :))
-
-monitorSide = "side"
-MONITOR = peripheral.wrap(monitorSide)
+MONITOR = nil
+function setMonitor(mon)
+    MONITOR = mon
+end
 
 function string.jsub(str, startIndex, endIndex)
     if (endIndex == nil) then
@@ -95,11 +95,11 @@ function drawGroupBoxHeader(x, y, w, text, foreground, background)
 end
  
 function drawGroupBoxWall(x, y, h, foreground, background)
-    if (foreground ~- nil) then
+    if (foreground ~= nil) then
         MONITOR.setTextColur(foreground)
     end
 
-    if (background ~- nil) then
+    if (background ~= nil) then
         MONITOR.setBackgroundColor(background)
     end
 
